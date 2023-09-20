@@ -38,91 +38,49 @@ const Navbar = () => {
   const classes = useStyles();
 
   return (
-    // <Grid
-    //   container
-    //   alignItems="center"
-    //   justify="space-between"
-    //   className={classes.navbar}
-    // >
-
-    <div className="navbar">
-      <Link to="/">
-        <div className="logo">
-          <img src={logo} alt="logo" 
-            style={{
-              height: 'auto',
-              width: '200px'
-            }}/>
-        </div>
-      </Link>
-    </div>
-    //         <Link to="/">
-    //           <Button
-    //             style={{
-    //               textDecoration: 'none',
-    //               border: '2px #473366 solid',
-    //               height: '48px',
-    //               width: '80px'
-    //             }}
-    //           >
-    //             Home
-    //           </Button>
-    //         </Link>
-    // <Grid
-    //   container
-    //   alignItems="center"
-    //   justify="space-between"
-    //   className={classes.navbar}
-    // >
-    //   <Grid item className={classes.navLinks}>
-    //     <Grid container spacing={2}>
-    //       <Grid item xs={3}>
-    //         <Link to="/">
-    //           <img src={logo} alt="logo"
-    //             style={{
-    //               color: 'white',
-    //               textDecoration: 'none',
-    //               height: 'auto',
-    //               width: '200px',
-    //             }}
-    //           />
-    //         </Link>
-    //       </Grid>
-    //       <Grid item xs={9}>
-    //         <Link to="/">
-    //           <Button
-    //             style={{
-    //               textDecoration: 'none',
-    //               border: '2px #473366 solid',
-    //               height: '48px',
-    //               width: '80px'
-    //             }}
-    //           >
-    //             Home
-    //           </Button>
-    //         </Link>
-    //       </Grid>
-    //       <Grid item xs={10}>
-    //         <Link to="/demo">
-    //           <Button
-    //             style={{
-    //               background: '#473366',
-    //               color: 'white',
-    //               textDecoration: 'none',
-    //               height: '48px',
-    //               width: '80px'
-    //             }}
-    //           >
-    //             Demo
-    //           </Button>
-    //         </Link>
-    //       </Grid>
-    //     </Grid>
-    //   </Grid>
-    //   <Grid item className={classes.authLinks}>
-    //     <AuthLinks />
-    //   </Grid>
-    // </Grid>
+    <Grid
+      container
+      alignItems="center"
+      justify="space-between"
+      className={classes.navbar}
+    >
+      <Grid item className={classes.navLinks}>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Link to="/">
+              <Button
+                style={{
+                  textDecoration: 'none',
+                  border: '2px #473366 solid',
+                  height: '48px',
+                  width: '80px'
+                }}
+              >
+                Home
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item xs={6}>
+            <Link to="/demo">
+              <Button
+                style={{
+                  background: '#473366',
+                  color: 'white',
+                  textDecoration: 'none',
+                  height: '48px',
+                  width: '80px'
+                }}
+              >
+                Demo
+              </Button>
+            </Link>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item className={classes.authLinks}>
+        <AuthLinks />
+      </Grid>
+    </Grid>
   );
 };
 
