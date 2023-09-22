@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/PONG-logo.png'
+import logo from '../images/PONG-logo.png';
 
 import { Link } from 'react-router-dom';
 import { Button, makeStyles, Grid } from '@material-ui/core';

@@ -1,0 +1,19 @@
+.right {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    color: white;
+    padding: 25px;
+}
+
+.logo {
+    max-width: 45%; 
+    height: auto;
+}
+
+p {
+    font-size: 20px;
+    padding-bottom: 50px;;
+}

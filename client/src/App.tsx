@@ -31,7 +31,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <Navbar />
+        {/* <Navbar /> */}
         {!isLoading ? (
           <Switch>
             <Route exact path="/" component={Home} />
@@ -42,7 +42,7 @@ function App() {
               isLoggedIn={!!currentUser}
               path="/demo"
               component={Demo}
-            />
+            /> 
             <Route>
               <Redirect to="/demo" />
             </Route>
