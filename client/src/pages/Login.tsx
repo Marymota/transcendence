@@ -5,6 +5,10 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as authActions from '../redux/actions/auth/actions';
 
+import logo from '../images/PONG-logo.png';
+import disk from '../images/play-icon.png';
+
+
 const Login = () => {
   const [creds, setCreds] = useState({
     email: '',
@@ -45,9 +49,11 @@ const Login = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        backgroundColor: '#463366'
       }}
     >
+      <img src={disk} alt="Disquete Illustration" />
       <div
         style={{
           margin: '30px 0',
@@ -56,27 +62,40 @@ const Login = () => {
           flexDirection: 'column'
         }}
       >
-        <h1>Log In</h1>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <img src={logo} alt="Logo Pong" />
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center',
+          color: 'white',
+          padding: '25px'
+        }}>
           <div>New member?</div>
           <div>
             <Link
-              style={{ textDecoration: 'none', marginLeft: '0.5rem' }}
+              style={{
+                textDecoration: 'none', 
+                marginLeft: '0.5rem',
+                color: 'white'
+            }}
               to="/register"
             >
               Create an account
             </Link>
           </div>
-        </div>
+        </div> 
       </div>
 
       <form
         onSubmit={onSubmitHandler}
-        style={{ display: 'flex', flexDirection: 'column', width: '350px' }}
+        style={{ display: 'flex', 
+        flexDirection: 'column', 
+        width: '350px'
+      }}
       >
-        <TextField
+        {/* <TextField
           style={{
-            margin: '0.5rem 0'
+            margin: '0.5rem 0',
+            backgroundColor: 'white'
           }}
           variant="outlined"
           id="email"
@@ -87,7 +106,10 @@ const Login = () => {
           required
         />
         <TextField
-          style={{ margin: '0.5rem 0' }}
+          style={{ 
+            margin: '0.5rem 0',
+            backgroundColor: 'white'
+          }}
           variant="outlined"
           id="password"
           type="password"
@@ -95,18 +117,36 @@ const Login = () => {
           value={creds.password}
           label="Password"
           required
-        />
+        /> */}
         <Button
+          type="button"
+          style={{
+            height: '48px',
+            background: '#5CB9BD',
+            color: 'white',
+          }}>
+          42 Intra
+        </Button>
+        <Button
+          type="button"
+          style={{
+            height: '48px',
+            border: '2px solid #EDDF5A',
+            color: '#EDDF5A',
+            marginTop: '1rem'
+          }}>
+          Google
+        </Button>
+        {/* <Button
           type="submit"
           style={{
             height: '48px',
             background: '#FF0083',
             color: 'white',
             marginTop: '2rem'
-          }}
-        >
+          }}>
           Send
-        </Button>
+        </Button> */}
       </form>
     </div>
   );
