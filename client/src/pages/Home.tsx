@@ -1,21 +1,61 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { TextField, Button } from '@material-ui/core';
+import { Link, useHistory } from 'react-router-dom';
+import Authentication from '../containers/Authentication';
 
-const Home = () => {
-  const [welcomeMsg, setWelcomeMsg] = useState<string>('');
+import { useDispatch } from 'react-redux';
+import * as authActions from '../redux/actions/auth/actions';
+
+import './Home.css';
+
+import logo from '../images/PONG-logo.png';
+import disk from '../images/disk.png';
+
+
+const Login = () => {
+  const [creds, setCreds] = useState({
+    email: '',
+    password: ''
+  });
+
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
-    (async () => {
-      const res = await axios.get('/api/start');
-      setWelcomeMsg(res.data.msg);
-    })();
+    setCreds({
+      email: '',
+      password: ''
+    });
   }, []);
 
+  const onChangeHandler = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { value, id } = e.target;
+
+    setCreds((prevState) => ({
+      ...prevState,
+      [id]: value
+    }));
+  };
+
+  const onSubmitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+    dispatch(authActions.login(creds, history));
+  };
+
   return (
-    <div className="App-header">
-      <p>{welcomeMsg}</p>
+    <div className='container'>
+
+      <div className='left'>
+        <img className='disk' src={disk} alt="Disquete Illustration" />
+      </div>
+      <div className= 'right'>
+        <Authentication />
+      </div>
+ 
     </div>
   );
 };
 
-export default Home;
+export default Login;
