@@ -10,6 +10,7 @@ import './Home.css';
 
 import logo from '../images/PONG-logo.png';
 import disk from '../images/disk.png';
+import GoogleOAuth from '../components/Oauth/GoogleOAuth';
 
 
 const Login = () => {
@@ -51,7 +52,7 @@ const Login = () => {
         <img className='disk' src={disk} alt="Disquete Illustration" />
       </div>
       <div className= 'right'>
-        <Authentication />
+        <GoogleOAuth />
       </div>
  
     </div>

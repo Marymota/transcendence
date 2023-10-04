@@ -69,18 +69,8 @@ const Authentication = () => {
           }}>
           42 Intra
         </Button>
-        {/* <Button
-          type="button"
-          style={{
-            height: '48px',
-            border: '2px solid #EDDF5A',
-            color: '#EDDF5A',
-            marginTop: '1rem'
-          }}>
-          Google
-        </Button> */}
         <LoginButton />
-        <LogoutButton />
+        {/* <LogoutButton /> */}
       </form>
     </div>
       );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Navbar.css'
+import './Sidebar.css'
 
 import logo from '../images/PONG-logo.png'
 import play from '../images/play-icon.png'
@@ -45,7 +45,7 @@ import AuthLinks from '../components/auth-links/AuthLinks';
 //   }
 // }));
 
-const Navbar = () => {
+const Sidebar = () => {
 //  const classes = useStyles();
 
   return (
@@ -154,4 +154,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Sidebar;
